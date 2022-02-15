@@ -1,0 +1,34 @@
+#cloud-config
+apt:
+  conf: |
+    APT {
+        Get {
+            Assume-Yes 'true';
+            Fix-Broken 'true';
+        }
+    }
+package_update: true
+package_upgrade: true
+users:
+  - name: robert
+    passwd: 'Q.Q8jMAspQHqc'
+    ssh-authorized-keys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2b5eskLjnA+Wsrj1O7+Cj65hPwdVJoyh80fV+0xU5G3pLx3g7PgMhFeN4XzRtc0+AZyph1teENIIK5hCwcf/2FrxoLmp5UNDJQZE8qA6ayItKOFGwtIA+3KoGCtW3Q9djhA3qFJw7nqY/aNlWZCQEWmzvmMfwwhxr2NCjnezG/aLNz83WMjNtXKaT8zkYwDDAHqXO/C62BxqgeJGJMXDzJ3xYl4n22h1jH9JrLzxu+lGRVxZL1+OJt2wjZm1/zixZ+w6CEa18oByAGUMvNTT4XJIybfpjoAY5YAYwViERUrU7S6zBY6VT1xoX1zWtF9kzjLpkVZU/jEUTeCQJapTf5WqM+Chx8M3wmwVLqJWZ9KEIJYHUVLu5O2UEibE+4hf0qPVPvmnRAv+pSf3GD/D7U/qJSa2AXCpWpMhKs8mEEyVWnPUugBaa28SrqooT9ezN/6yFTSR7IQlKixWHvCfd2/t2FZ4gqMRovqxIhFeSABNo/TQ90XQVmRy7E/9A4u0= robert@roberts-mbp.lan"
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZfv3kC/2SR+f9FimbV7Eo4W/wrv/fdea/GnKivW55vDYUZX20wLTmsYvJ8AZ8gdAmjadXVA5fbKAHK8afpCqPcbW7+jBJHYTBtJ/n/JJW7VZv+DOypKoGArAZufF8DuILQfFAu9UnVHxDTOfxDpv9MIeyeWjDRnq+aaO8Aq8I08uLUvcUDUxPGLoZVfZhrJeNVWxvbWrUxwmBaBvnmEt7JBkyFy1SzMNLKeVdawKoUqZr/BNAoB/a4Y+Lw1zSxaoc+OHpuYfJh5QAMOsmax46bztwxTUTjmbxic6mESBtP8x/8QnhyqZwH78UYWDrweUUvfc5brmt4peqIOsucDx7 alleg@ROBERT-DESKTOP"
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+  - name: dchu
+    passwd: 'fyolPji3/5CDY'
+    ssh-authorized-keys:
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAzYXvqo3qctrluCH6A7yFLJI3Lv8ZnraVSeA3loMC6uRZbLK7y1CKhTyFBQJpY33yhl9XohoGzBuK+e3u24KCEIF+H5L4kXs2IGe2h4TWoiWXd4H3eaWiBz3jI6nVkJw3ph0EzJYEe0sbLaLNYnUtUp1OwJzrSGUU4xrMSECLNFwhJBJm1G98+9/0/Ka02Vd/kggJz59JKq2QwnMcJGY5AjmKyFc7+fYxFv3WK1TbxDB4SUP3ookpADFJxJpfqINKZgLBQMwwTB3GMNkMQwegFeABvs+LHuwix6Bw/77UwWkdJLNp284xMgsxuMFST0qCmPRXNQfeaMALU2CTWSkwQjri3SKnb0T7/zGnmhZvZAShnblTuqAOB85a1NcMUiwRlstQDZeVJbSGJ+IciMDby14Ki1KA9Xmzn2xmbm43Bon8sRlfOuXD6PNnzsXNFQ+7LpneA+aYyvJK8j3ZvqvwgN26UIzWrlSezUDWFPR7xoTDD2iRqsjhuxWGNFRCDkkLxdlachIAMgjnBq4bk6YW/AlsKJtjFqxRS4Lrtbui1gKnEEzAU2NzKLCo9JQGweiL2of5CzQpd5/KIlxTGxIuyOyI9wXC9Q8zfYD8STv9GIQovok68YbsvvOfjODD2KCPP5mDICYxB6zqax+geztDWSkkUO2nm82Izr98EBXeXF0= rsa-key-20210504"
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAmk2gbq2sJYmC5/RkkDQfQzMBvCTYQ8yrMVJ3yqiij9ViGtoJ129AVdoR9S/9JeM7It1a0AKPuLfdEYglE8mlOSyqYpWgtE6FNp94aLQg/oEu2av5NGisTdgnb0FlVfCjyLZJZGyc/9qXqH5FVAU06/58b23LWImHkG1lfQdg8gDGlzDkqiN/RHwEpnvS5cHzd+asZu2othZn/B/IiXJ8P/oiF9Ndaew7WQc/IK/kXp5Nq3Kkmd8EZxYGgb8ON8PT6uV1x7LyjilMhUasZPJspy+h2B7DRIYyWiCK44zbn1JoBawKpV4xx+AfpfiT+wL/JalOq9brA7llp7uSY3/9bGTZBonSsjCl22XwiyVbZXyt7JNi6mBmAQLkAI/u3Ua9/S3bExsf+gZN1ZVjHzobz1cQi5td98wxNNYQRu9ENNuXFyS97RXYhoZY9DtNdR2ES8cVNE4qE4xVZcyYAEoVTFnO9rMvulRSdiC9nxDZoggjj9isexAD+B9mBSrU6ipNqjQ4KLH6CuStrU0BNIyGco5kOZ8bgXnFSIs9lza3jpuTDpFQK1GeUL6AKFsc55zvWa2o1pJbFwsfa5PZ6X2hRj/qMkc6nIN6OPeP7hk5dVke6Fc2Z9UnAWBPlvhCg/3rIfVPmH28LaK3S3pdqE05cnKz+rWDdibN/S1Aq2VEmSc= rsa-key-20210524"
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+runcmd:
+  # Setup firewall
+  - ufw --force enable
+  - ufw allow 22
+  # Must be run manually after setup:
+  # - wget -O install-headless.sh https://static.gala.games/node/install-headless.sh; sudo bash install-headless.sh
